@@ -1,0 +1,111 @@
+
+.flexBox{
+    display:flex;
+    width:100%;
+  }
+  
+  .selDiv{
+    width:100%;
+  }
+  
+  .selDiv select{
+    width:25%;  
+    padding:7px 15px;
+    box-sizing: border-box;
+  
+  }
+  
+  .selDiv button {
+    padding: 8px 25px;
+    border: 1px solid #8b8ba0;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    background-color: blue;
+    color: white;
+    width:25%;
+    box-sizing: border-box;
+    transition: all 2s ease-in-out;
+  }
+
+  /* .inpDiv button {
+    padding: 8px 25px;
+    border: 1px solid #8b8ba0;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    background-color: blue;
+    color: white;
+    width:20%;
+    box-sizing: border-box;
+    transition: all 2s ease-in-out;
+  }
+  */
+  .selDiv button:hover{
+    background-color:green;
+    color:white;
+    border:1px solid black;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    text-decoration: underline;
+  } 
+  
+  .searchConsole{
+    background-color: white;
+    padding:10px 15px;
+    margin:15px 0px;
+    }
+    
+    .searchTable{
+      font-size: 12px
+    }
+    
+    .searchTable th{
+      text-align: left;
+    }
+    
+    .searchTable td{
+      vertical-align: top;
+    }
+    
+    .searchConsole h1 {
+      border-bottom: 2px solid #eee;
+      padding-bottom: 10px;
+    }
+    
+    .searchTableContainer{
+      height: 400px;
+      overflow: auto;
+    
+    }
+    
+    /*scrollbar css */
+    
+    ::-webkit-scrollbar {
+      width: 15px;
+    }
+    
+    
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: #000000; 
+    }
+    
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: #f1f1f1; 
+      border-radius: 5px;
+      
+    }
+    
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555; 
+    }
+    
+    ::-webkit-scrollbar-thumb:horizontal{
+    
+     height:10px;
+    }
+    
+    tr>td:nth-child(1),tr>td:nth-child(2){
+    min-width: 80px;
+    }
