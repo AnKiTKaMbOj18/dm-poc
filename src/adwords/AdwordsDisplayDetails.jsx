@@ -3,6 +3,7 @@ import AdwordsKeywordPlanner from './AdwordsKeywordPlanner';
 import AdwordsSearchConsole from './AdwordsSearchConsole';
 import logo from '../logo.svg';
 import '../App.css';
+// import {csv} from 'csv-string';
 
 
 class AdwordsDisplayDetails extends Component {
@@ -24,13 +25,14 @@ class AdwordsDisplayDetails extends Component {
                 "competition": 0.9995118165267775,
                 "categories": "11533, 10405, 10009"
             }],
-            input: null
+            input: null,
+            arr: null
         }
         this.fetchUserData = this.fetchUserData.bind(this);
     }
 
     fetchUserData() {
-        fetch("/errorCounts?category=notFound&platform=web&latestCount=true&keyword=" + this.state.input)
+        fetch("/adwords?keyword=" + this.state.input)
             .then(data => data.json())
             .then(userData => {
                 let data = userData
@@ -43,6 +45,20 @@ class AdwordsDisplayDetails extends Component {
     onHandleChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value
+        }, () => {
+            console.log(this.state.input)
+        })
+    }
+
+    handleData = (data) => {
+        var arr = [];
+        data.map(
+            data => arr.push(data.header1)
+        );
+        this.setState({
+            input: arr.join(',')
+        }, () => {
+            console.log(this.state.input);
         })
     }
 
@@ -50,7 +66,8 @@ class AdwordsDisplayDetails extends Component {
         return (
             <Fragment>
                 <h1>DM Adwords Api UI</h1>
-                <AdwordsKeywordPlanner onHandleChange={this.onHandleChange} onClickHandler={this.fetchUserData} />
+                <AdwordsKeywordPlanner onHandleChange={this.onHandleChange}
+                    handleData={this.handleData} onClickHandler={this.fetchUserData} />
                 <AdwordsSearchConsole loading={this.state.loading} userData={this.state.userData} />
             </Fragment>
         )

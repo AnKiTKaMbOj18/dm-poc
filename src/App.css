@@ -125,8 +125,11 @@ margin:15px 0px;
  height:10px;
 }
 
-tr>td:nth-child(1),tr>td:nth-child(2){
+tr>td:nth-child(1),tr>td:nth-child(2),tr>td:nth-child(3),tr>td:nth-child(4),tr>td:nth-child(5){
 min-width: 80px;
+padding:15px 5px;
+border-bottom: 1px solid grey;
+box-sizing: border-box;
 }
 
 .btnFlex{
@@ -152,4 +155,27 @@ min-width: 80px;
   border:1px solid green;
   border-radius: 7px;
   box-sizing: border-box;
+}
+
+/* .btnFlex button{
+  background-color:green;
+  color:pink;
+} */
+
+.importFile{
+  margin:auto;
+  max-width:300px;
+  border:1px solid black;
+  text-align: center;
+  padding: 5px 15px;
+  margin-top:10px;
+  background-color:grey;
+  color:white;
+  border-radius: 10px;
+  transition: all 1s ease-in-out;
+}
+
+.importFile:hover{
+  background-color: khaki;
+  color:black;
 }

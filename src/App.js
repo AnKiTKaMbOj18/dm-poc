@@ -12,7 +12,7 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            adwordsLoading: false,
+            adwordsLoading: true,
             countLoading: false,
             sampleLoading: false,
             resetLoading: false
@@ -21,7 +21,7 @@ class App extends Component {
 
     onAdwordsClick = () => {
         this.setState({
-            adwordsLoading: true,
+            adwordsLoading:!this.state.adwordsLoading ,
             countLoading: false,
             sampleLoading: false,
             resetLoading: false
